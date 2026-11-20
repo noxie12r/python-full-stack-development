@@ -1,0 +1,320 @@
+sachink@Sachins-MacBook-Pro ~ % -u postgress -p
+zsh: command not found: -u
+sachink@Sachins-MacBook-Pro ~ % -U postgress -d
+zsh: command not found: -U
+sachink@Sachins-MacBook-Pro ~ % -U postgress -d postgress
+zsh: command not found: -U
+sachink@Sachins-MacBook-Pro ~ % -U postgres -d postgres 
+zsh: command not found: -U
+sachink@Sachins-MacBook-Pro ~ % psql -U postgres -d postgres
+
+Password for user postgres: 
+psql (18.7)
+Type "help" for help.
+
+postgres=# /s
+postgres-# /d
+postgres-# \d
+                      List of relations
+ Schema |             Name             |   Type   |  Owner   
+--------+------------------------------+----------+----------
+ public | department                   | table    | postgres
+ public | department_department_id_seq | sequence | postgres
+ public | employee                     | table    | postgres
+ public | employee_employee_id_seq     | sequence | postgres
+ public | student                      | table    | postgres
+ public | student_id_seq               | sequence | postgres
+(6 rows)
+
+postgres-# \s
+(END)...skipping...
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)...skipping...
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)...skipping...
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)...skipping...
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)...skipping...
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)...skipping...
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+ ESCOC...skipping...
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+
+postgres-# select*from movie_movie ;
+ERROR:  syntax error at or near "/"
+LINE 1: /s
+        ^
+postgres=# \d
+                      List of relations
+ Schema |             Name             |   Type   |  Owner   
+--------+------------------------------+----------+----------
+ public | department                   | table    | postgres
+ public | department_department_id_seq | sequence | postgres
+ public | employee                     | table    | postgres
+ public | employee_employee_id_seq     | sequence | postgres
+ public | student                      | table    | postgres
+ public | student_id_seq               | sequence | postgres
+(6 rows)
+
+postgres=# select*from movie_movie ;
+ERROR:  relation "movie_movie" does not exist
+LINE 1: select*from movie_movie ;
+                    ^
+postgres=# SELECT * FROM movie_movie
+postgres-# \l
+                                                List of databases
+   Name    |  Owner   | Encoding | Locale Provider | Collate | Ctype | Locale | ICU Rules |   Access privileges   
+-----------+----------+----------+-----------------+---------+-------+--------+-----------+-----------------------
+ movie     | postgres | UTF8     | libc            | C       | C     |        |           | 
+ postgres  | postgres | UTF8     | libc            | C       | C     |        |           | 
+ student   | postgres | UTF8     | libc            | C       | C     |        |           | 
+ template0 | postgres | UTF8     | libc            | C       | C     |        |           | =c/postgres          +
+           |          |          |                 |         |       |        |           | postgres=CTc/postgres
+ template1 | postgres | UTF8     | libc            | C       | C     |        |           | =c/postgres          +
+           |          |          |                 |         |       |        |           | postgres=CTc/postgres
+(5 rows)
+
+postgres-# SELECT * FROM movie_movie
+postgres-# \c movie
+You are now connected to database "movie" as user "postgres".
+movie-# \d
+                        List of relations
+ Schema |               Name                |   Type   |  Owner   
+--------+-----------------------------------+----------+----------
+ public | auth_group                        | table    | postgres
+ public | auth_group_id_seq                 | sequence | postgres
+ public | auth_group_permissions            | table    | postgres
+ public | auth_group_permissions_id_seq     | sequence | postgres
+ public | auth_permission                   | table    | postgres
+ public | auth_permission_id_seq            | sequence | postgres
+ public | auth_user                         | table    | postgres
+ public | auth_user_groups                  | table    | postgres
+ public | auth_user_groups_id_seq           | sequence | postgres
+ public | auth_user_id_seq                  | sequence | postgres
+ public | auth_user_user_permissions        | table    | postgres
+ public | auth_user_user_permissions_id_seq | sequence | postgres
+ public | django_admin_log                  | table    | postgres
+ public | django_admin_log_id_seq           | sequence | postgres
+ public | django_content_type               | table    | postgres
+ public | django_content_type_id_seq        | sequence | postgres
+ public | django_migrations                 | table    | postgres
+ public | django_migrations_id_seq          | sequence | postgres
+ public | django_session                    | table    | postgres
+ public | movie_movie                       | table    | postgres
+ public | movie_movie_id_seq                | sequence | postgres
+ public | movie_review                      | table    | postgres
+ public | movie_review_id_seq               | sequence | postgres
+(23 rows)
+
+movie-# \s
+
+movie-# SELECT * FROM movie_movie
+movie-# ;
+ERROR:  syntax error at or near "SELECT"
+LINE 2: SELECT * FROM movie_movie
+        ^
+movie=# SELECT * FROM movie_movie;
+ id |   title    | description | release_date | genre | poster 
+----+------------+-------------+--------------+-------+--------
+  1 | idly kadai | karuppa     | 2026-11-17   | drama | 
+(1 row)
+
+movie=# 
